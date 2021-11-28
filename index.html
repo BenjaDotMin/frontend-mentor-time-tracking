@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <link rel="stylesheet" href="./wwwroot/css/main.css">
+</head>
+<body>
+
+  <main>
+    <div class="container">    
+      <section class="user card">
+        <div class="card-header">
+          <img src="./wwwroot//images/image-jeremy.png" alt="user icon">
+          <div class="user-details">
+            <label>Report for</label>
+            <h1>Jeremy Robson</h1>    
+          </div>              
+        </div>
+        <div class="card-content"> 
+          <ul>
+            <li data-period="daily">Daily</li>
+            <li data-period="weekly" class="active">Weekly</li>
+            <li data-period="monthly">Monthly</li>
+          </ul>       
+        </div>       
+      </section>  
+
+      <section class="work card">
+        <div class="card-header"></div>
+        <div class="card-content">
+          <h2>Work<img src="./wwwroot/images/icon-ellipsis.svg" alt="icon ellipsis"></h2>
+          <div>
+            <h3>32hrs</h3>
+            <p>Last Week - <span>36hrs</span></p>       
+          </div>          
+        </div>       
+      </section>
+
+      <section class="play card">
+        <div class="card-header"></div>
+        <div class="card-content">
+          <h2>Play<img src="./wwwroot/images/icon-ellipsis.svg" alt="icon ellipsis"></h2>
+          <div>
+            <h3>10hrs</h3>
+            <p>Last Week - <span>8hrs</span></p>    
+          </div>
+        </div>       
+      </section>
+
+      <section class="study card">
+        <div class="card-header"></div>
+        <div class="card-content">
+          <h2>Study<img src="./wwwroot/images/icon-ellipsis.svg" alt="icon ellipsis"></h2>
+          <div>
+            <h3>4hrs</h3>
+            <p>Last Week - <span>7hrs</span></p>    
+          </div>
+        </div>        
+      </section>
+
+      <section class="exercise card"> 
+        <div class="card-header"></div>
+        <div class="card-content">
+          <h2>Exercise<img src="./wwwroot/images/icon-ellipsis.svg" alt="icon ellipsis"></h2>
+          <div>
+            <h3>4hrs</h3>
+            <p>Last Week - <span>5hrs</span></p>   
+          </div>
+        </div>              
+      </section>
+
+      <section class="social card">       
+        <div class="card-header"></div>
+        <div class="card-content">
+          <h2>Social<img src="./wwwroot/images/icon-ellipsis.svg" alt="icon ellipsis"></h2>
+          <div>
+            <h3>5hrs</h3>
+            <p>Last Week - <span>10hrs</span></p>    
+          </div>
+        </div>        
+      </section>
+
+      <section class="self card">    
+        <div class="card-header"></div>
+        <div class="card-content">
+          <h2>Self Care<img src="./wwwroot/images/icon-ellipsis.svg" alt="icon ellipsis"></h2>
+          <div>
+            <h3>2hrs</h3>
+            <p>Last Week - <span>2hrs</span></p>    
+          </div>
+        </div>    
+        
+      </section>   
+    </div>
+  </main>
+
+  <script defer src="./wwwroot/js/fetchData.js"></script>
+</body>
+</html>

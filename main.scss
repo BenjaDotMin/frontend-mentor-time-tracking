@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+$blue: hsl(246, 80%, 60%);
+$red: hsl(15, 100%, 70%);
+$softBlue: hsl(195, 74%, 62%);
+$lightRedStudy: hsl(348, 100%, 68%);
+$limeGreen: hsl(145, 58%, 55%);
+$violet: hsl(264, 64%, 52%);
+$orange: hsl(43, 84%, 65%);
+$veryDarkBlue: hsl(226, 43%, 10%);
+$darkBlue: hsl(235, 46%, 20%);
+$desaturatedBlue: hsl(235, 45%, 61%);
+$paleBlue: hsl(236, 100%, 87%);
+
+*{box-sizing: border-box;}
+
+html{font-size: 62.5%;}
+
+body{font-family: 'Rubik', sans-serif; margin: 0; background-color: $veryDarkBlue;
+    main{display: grid; place-items: center; min-height: 100vh; padding:80px 0;
+        .container{width: 89vw; max-width: 1110px; display: grid; grid-template: repeat(2, 1fr) / repeat(4, 1fr); gap:3rem; min-height: 518px;
+            .card{display: flex; flex-direction: column; border-radius: 15px; overflow: hidden;        
+                h1, h2, h3, p{color:white; margin: 0;}
+                h1{font-weight: 300; font-size: 4rem; line-height: 4.8rem;}
+                h2{font-weight: 400; display: flex; align-items: center; justify-content: space-between; font-size: 1.9rem;
+                    img{cursor: pointer;}
+                }
+                h3{font-weight: 300; font-size: 5.5rem; line-height: 4.2rem; margin: 36px 0 19px; letter-spacing: 0.05rem; transition: opacity 0.2s ease-in-out; will-change: opacity;}
+                p{font-weight: 400; font-size: 1.5rem; color:$paleBlue;
+                    span{transition: opacity 0.2s ease-in-out; will-change: opacity;}
+                }
+                .card-header{height: 60px;
+                    label{display: block; margin: 37px 0 3px; font-size: 1.5rem; color:$paleBlue;}
+                }
+                .card-content{flex:1; margin-top: -15px; background-color: $darkBlue; border-radius: 15px; padding: 28px 30px 30px; transition: background-color 0.2s; cursor: pointer;
+                    &:hover{filter: brightness(1.3);}
+                }
+                &.user{grid-row: 1 / 3;
+                    .card-header{height: 354px; padding: 34px 33px; background-color: $blue; border-radius: 15px; position: relative; z-index: 2;
+                        img{width: 84px; border: 3px solid white; border-radius: 100%; margin-left: -4px;}
+                    }
+                    .card-content{margin-top: -26px; padding: 52px 32px 30px; cursor: initial;
+                        ul{margin: 0; padding: 0; display: grid;  gap: 20px;
+                            li{font-size: 1.8rem; list-style: none; cursor: pointer; color:$desaturatedBlue; justify-self: flex-start; transition: color 0.2s; will-change: color;
+                                &.active, &:hover{color: white;}
+                                &.active{cursor: default;}
+                            }
+                        }  
+                        &:hover{filter: brightness(1);}                    
+                    }
+                }
+                &.work{
+                    .card-header{background: url(../images/icon-work.svg) right 17px top -11px no-repeat $red;}
+                }
+                &.play{
+                    .card-header{background: url(../images/icon-play.svg) right 21px top -5px no-repeat $softBlue;}
+                }
+                &.study{
+                    .card-header{background: url(../images/icon-study.svg) right 17px top -7px no-repeat $lightRedStudy;}
+                }
+                &.exercise{
+                    .card-header{background: url(../images/icon-exercise.svg) right 17px top -1px no-repeat $limeGreen;}
+                }
+                &.social{
+                    .card-header{background: url(../images/icon-social.svg) right 14px top no-repeat $violet;}
+                }
+                &.self{
+                    .card-header{background: url(../images/icon-self-care.svg) right 15px top -11px no-repeat $orange;}
+                }
+            }                       
+        }
+    }
+
+    @media(max-width:1020px){
+        main{padding-top: 80px;
+            .container{grid-template: repeat(4, 1fr) / repeat(2, 1fr); min-height: auto; 
+                .card{                                    
+                    &.user{grid-row: 1 / 1; grid-column: 1 / 3; align-self: flex-end;
+                        .card-header{height:auto; display: flex; align-items: center; 
+                            img{margin-left: 0;}
+                            .user-details{margin-left: 20px;
+                                label{margin: 0;}
+                            }                            
+                        }
+                        .card-content{padding: 48px 32px 23px;
+                            ul{display: flex; align-items: center; justify-content: space-between;}
+                        }                       
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width:550px){
+        main{
+            .container{grid-template: repeat(5, 1fr) / repeat(1, 1fr); gap: 2.5rem;
+                .card{                             
+                    &.user{ grid-column: 1 / 1; 
+                        .card-header{padding: 28px 25px;
+                            img{width: 70px;}                           
+                            h1{font-size: 3rem; line-height: 3.2rem;}
+                        }                                             
+                    }
+                    .card-content{padding: 28px 30px; display: flex; flex-direction: column; justify-content: center;
+                        div{display: flex; align-items: center; justify-content: space-between;
+                            h3{margin: 15px 0 0;}
+                            p{margin-top: 15px;}
+                        }
+                     }  
+                }
+            }
+        }
+    }
+
+    @media(max-width:430px){
+        main{
+            .container{
+                .card{                               
+                    &.user{ 
+                        .card-header{                         
+                            h1{font-size: 2.6rem; line-height: 3.2rem;}                                                  
+                        }
+                    }
+                    div{
+                        h3{font-size: 3rem; line-height: 2.4rem;}
+                        p{font-size: 1.2rem;}
+                    }
+                }
+            }
+        }
+    }
+}
